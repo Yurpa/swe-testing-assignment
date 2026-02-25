@@ -98,6 +98,44 @@ class Calculator_main extends JFrame {
         clear.setFont(new Font("Sans", Font.BOLD, 13));
         clear.setBounds(160, 115, 100, 30);
         frame.add(clear);
+
+        // ADD handler
+        plus.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                action1.setText("+");
+                try {
+                    double a = Double.parseDouble(num1.getText());
+                    double b = Double.parseDouble(num2.getText());
+                    res = a + b;
+                    end.setText("Choose operation or '='!");
+                } catch (Exception z) {
+                    end.setText("Please enter real numbers only!");
+                }
+            }
+        });
+
+        // SUB handler
+        minus.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                action1.setText("-");
+                try {
+                    double a = Double.parseDouble(num1.getText());
+                    double b = Double.parseDouble(num2.getText());
+                    res = a - b;
+                    end.setText("Choose operation or '='!");
+                } catch (Exception z) {
+                    end.setText("Please enter real numbers only!");
+                }
+            }
+        });
+
+        // Calculate — display stored result
+        calc.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                result.setText(String.valueOf(res));
+                end.setText("You did it! The Answer:");
+            }
+        });
         
         frame.validate();
         frame.setVisible(true);
