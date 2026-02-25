@@ -136,6 +136,52 @@ class Calculator_main extends JFrame {
                 end.setText("You did it! The Answer:");
             }
         });
+
+        // MUL handler
+        mult.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                action1.setText("*");
+                try {
+                    double a = Double.parseDouble(num1.getText());
+                    double b = Double.parseDouble(num2.getText());
+                    res = a * b;
+                    end.setText("Choose operation or '='!");
+                } catch (Exception z) {
+                    end.setText("Please enter real numbers only!");
+                }
+            }
+        });
+
+        // DIV handler — with division by zero check
+        div.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                action1.setText("/");
+                try {
+                    double a = Double.parseDouble(num1.getText());
+                    double b = Double.parseDouble(num2.getText());
+                    if (b == 0) {
+                        end.setText("Division by zero is not allowed!");
+                        return;
+                    }
+                    res = a / b;
+                    end.setText("Choose operation or '='!");
+                } catch (Exception z) {
+                    end.setText("Please enter real numbers only!");
+                }
+            }
+        });
+
+        // CLEAR handler — reset all fields to defaults
+        clear.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                num1.setText("0");
+                num2.setText("0");
+                result.setText("No answer yet!");
+                action1.setText("");
+                res = 0;
+                end.setText("Choose operation!");
+            }
+        });
         
         frame.validate();
         frame.setVisible(true);
