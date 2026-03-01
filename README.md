@@ -11,7 +11,7 @@ This is a public repository for the project Quick-Calc. Quick-calc is a Java des
 - **Apache Maven 3.6** and later
 
 ### Installing Java:
-You can install **Oracle Java SE Development Kit (JDK)** from the official website of Oracle: [page](https://www.oracle.com/java/technologies/downloads/). There you can select the latest available version of and download the installer to your OS:
+You can install **Oracle Java SE Development Kit (JDK)** from the official website of Oracle: [Oracle](https://www.oracle.com/java/technologies/downloads/). There you can select the latest available version of and download the installer to your OS:
 
 | OS | Recommended method |
 |---|---|
